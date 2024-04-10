@@ -9,7 +9,7 @@ let ordenar lista =
   (* Usamos la función compare como ordenación estándar *)
   List.fast_sort (compare) lista;;
 
-let rec agrupar lista = 
+(* let rec agrupar lista =
   match lista with
   | [] -> []
   | x::xs -> 
@@ -26,7 +26,7 @@ let rec agrupar lista =
     if agrupado = [] then
       x::(agrupar xs)
     else
-      x::agrupado::(agrupar xs);;
+      x::agrupado::(agrupar xs);; *)
 
 "En un lugar de la Mancha de cuyo nombre no quiero acordarme"
 |> str2list 
