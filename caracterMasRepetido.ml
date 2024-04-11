@@ -14,24 +14,22 @@ let ordenar lista =
   (* Usamos la función compare como ordenación estándar *)
   List.fast_sort (compare) lista;;
 
-let rec agrupar' (lista: char list) (acc:char*int) (max:char*int) : (char*int) = 
-(* let rec agrupar' : char list -> char -> int -> (char,int) : (char, int) = 
-  fun lista c acc max -> *)
+let rec calcularMaximo (lista: char list) (acc:char*int) (max:char*int) : (char*int) = 
   match lista with
   | [] -> max
   | x::xs -> 
     if x = fst acc then
-      (agrupar' xs (x, (snd acc)+1) max)
+      (calcularMaximo xs (x, (snd acc)+1) max)
     else
       if (snd acc) > (snd max) then
-        agrupar' xs (x, 1) acc
+        calcularMaximo xs (x, 1) acc
       else
-        agrupar' xs (x, 1) max;;
+        calcularMaximo xs (x, 1) max;;
 
 let maximo (lista: char list) : (char*int) = 
   match lista with
   | [] -> (' ', 0)
-  | x::xs -> agrupar' xs (x,1) (x,1);;
+  | x::xs -> calcularMaximo xs (x,1) (x,1);;
 
 let masrepe (cadena: string) : (char*int)= 
   cadena
