@@ -2,9 +2,12 @@ open Printf;;
 
 let str2list s = 
   (* str2list con funciones estandar de OCaml *)
-  (* Convertimos a lista de caracteres y quitamos (filter) los espacios en blanco *)
-  List.init (String.length s) (String.get s)
-  |> List.filter (fun x -> x != ' ');;
+  List.init (String.length s) (String.get s);;
+
+let quitarBlancos s = 
+  (* quitarBlancos con funciones estandar de OCaml *)
+  (* Quitamos (filter) los espacios en blanco *)
+  List.filter (fun x -> x != ' ') s;;
 
 let ordenar lista = 
   (* ordenar con funciones estandar de OCaml *)
@@ -33,6 +36,7 @@ let maximo (lista: char list) : (char*int) =
 let masrepe (cadena: string) : (char*int)= 
   cadena
   |> str2list
+  |> quitarBlancos
   |> ordenar
   |> maximo;;
 
