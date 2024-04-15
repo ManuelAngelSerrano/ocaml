@@ -39,5 +39,6 @@ let masrepe (cadena: string) : (char*int)=
   |> maximo;;
 
 
+printf "El caracter que más veces se repite es: ";;
 let res = masrepe "En un lugar de la Mancha de cuyo nombre no quiero acordarme" in
 printf "(%c %d)" (fst res) (snd res);; 
