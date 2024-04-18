@@ -33,6 +33,7 @@ let maximo (lista: char list) : (char*int) =
 
 let masrepe (cadena: string) : (char*int)= 
   cadena
+  |> String.lowercase_ascii 
   |> str2list
   |> quitarBlancos
   |> ordenar
